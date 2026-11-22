@@ -6,7 +6,7 @@ The FastAPI backend runs local analysis tools and returns a score and actionable
 ## Live demo
 
 - **Frontend:** [Live demo](https://data-quality-ai-agent.vercel.app/)
-- **Backend:** https://your-render-service.onrender.com
+- **Backend:** https://data-quality-ai-agent.onrender.com
 
 The free Render backend may take about **50 seconds** to wake up on its first request. Please wait for the analysis to finish.
 
