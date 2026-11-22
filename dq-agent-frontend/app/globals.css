@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: #f4f9fd;
+  color: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(100deg, #edf2ef 20%, #f8faf9 40%, #edf2ef 60%);
+  background-size: 220% 100%;
+  animation: shimmer 1.3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  to { background-position-x: -220%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+  }
+
+  .skeleton-shimmer {
+    animation: none;
+  }
+
+  .animate-spin {
+    animation: none !important;
+  }
+}

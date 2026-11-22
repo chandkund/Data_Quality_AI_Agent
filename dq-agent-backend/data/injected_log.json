@@ -1,0 +1,54 @@
+[
+  {
+    "issue_type": "random_nulls",
+    "column": "workclass",
+    "rows_affected": 250
+  },
+  {
+    "issue_type": "random_nulls",
+    "column": "education",
+    "rows_affected": 250
+  },
+  {
+    "issue_type": "random_nulls",
+    "column": "hours_per_week",
+    "rows_affected": 250
+  },
+  {
+    "issue_type": "extreme_outliers",
+    "column": "hours_per_week",
+    "rows_affected": 3,
+    "values": [
+      500,
+      600,
+      900
+    ]
+  },
+  {
+    "issue_type": "text_in_numeric_column",
+    "column": "capital_gain",
+    "rows_affected": 20,
+    "value": "unknown"
+  },
+  {
+    "issue_type": "negative_values",
+    "column": "age",
+    "rows_affected": 15
+  },
+  {
+    "issue_type": "inconsistent_text",
+    "column": "sex",
+    "rows_affected": 40
+  },
+  {
+    "issue_type": "duplicate_rows",
+    "column": "all columns",
+    "rows_affected": 50
+  },
+  {
+    "issue_type": "constant_column",
+    "column": "country_code",
+    "rows_affected": 5050,
+    "value": "IN"
+  }
+]

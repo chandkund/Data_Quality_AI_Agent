@@ -1,0 +1,22 @@
+# Local environment files and credentials
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python environments and caches
+venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+**/.pytest_cache/
+
+# Frontend dependencies and build output
+node_modules/
+**/node_modules/
+.next/
+**/.next/

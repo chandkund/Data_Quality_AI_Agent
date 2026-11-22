@@ -1,0 +1,350 @@
+{
+  "tool_level_recall": {
+    "check_nulls": {
+      "issues_found": true,
+      "detected_issue_types": [
+        "random_nulls (workclass)",
+        "random_nulls (education)",
+        "random_nulls (hours_per_week)"
+      ],
+      "result": {
+        "tool": "check_nulls",
+        "issues_found": true,
+        "details": {
+          "columns": {
+            "workclass": {
+              "null_count": 250,
+              "null_percent": 4.95
+            },
+            "education": {
+              "null_count": 250,
+              "null_percent": 4.95
+            },
+            "hours_per_week": {
+              "null_count": 250,
+              "null_percent": 4.95
+            }
+          }
+        }
+      }
+    },
+    "find_duplicates": {
+      "issues_found": true,
+      "detected_issue_types": [
+        "duplicate_rows (all columns)"
+      ],
+      "result": {
+        "tool": "find_duplicates",
+        "issues_found": true,
+        "details": {
+          "duplicate_rows": 50,
+          "examples": [
+            {
+              "index": 5000,
+              "values": {
+                "age": 22,
+                "workclass": "Private",
+                "fnlwgt": 51262
+              }
+            },
+            {
+              "index": 5001,
+              "values": {
+                "age": 45,
+                "workclass": "Private",
+                "fnlwgt": 276087
+              }
+            },
+            {
+              "index": 5002,
+              "values": {
+                "age": 42,
+                "workclass": "Private",
+                "fnlwgt": 77373
+              }
+            },
+            {
+              "index": 5003,
+              "values": {
+                "age": 36,
+                "workclass": "Private",
+                "fnlwgt": 245521
+              }
+            },
+            {
+              "index": 5004,
+              "values": {
+                "age": 19,
+                "workclass": "?",
+                "fnlwgt": 167428
+              }
+            }
+          ]
+        }
+      }
+    },
+    "detect_outliers": {
+      "issues_found": true,
+      "detected_issue_types": [
+        "extreme_outliers (hours_per_week)"
+      ],
+      "result": {
+        "tool": "detect_outliers",
+        "issues_found": true,
+        "details": {
+          "columns": {
+            "age": {
+              "count": 42,
+              "lower_bound": -2.0,
+              "upper_bound": 78.0,
+              "example_values": [
+                81,
+                90,
+                81
+              ]
+            },
+            "fnlwgt": {
+              "count": 143,
+              "lower_bound": -64588.625,
+              "upper_bound": 419658.375,
+              "example_values": [
+                439919,
+                456399,
+                464103
+              ]
+            },
+            "education_num": {
+              "count": 183,
+              "lower_bound": 4.5,
+              "upper_bound": 16.5,
+              "example_values": [
+                4,
+                3,
+                4
+              ]
+            },
+            "capital_loss": {
+              "count": 228,
+              "lower_bound": 0.0,
+              "upper_bound": 0.0,
+              "example_values": [
+                1902,
+                1902,
+                1617
+              ]
+            },
+            "hours_per_week": {
+              "count": 1329,
+              "lower_bound": 32.5,
+              "upper_bound": 52.5,
+              "example_values": [
+                55.0,
+                60.0,
+                25.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "check_types": {
+      "issues_found": true,
+      "detected_issue_types": [
+        "text_in_numeric_column (capital_gain)"
+      ],
+      "result": {
+        "tool": "check_types",
+        "issues_found": true,
+        "details": {
+          "columns": {
+            "capital_gain": {
+              "issue": "mixed_numeric_and_text",
+              "numeric_values": 5030,
+              "non_numeric_values": 20,
+              "examples": [
+                "unknown"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "check_value_rules": {
+      "issues_found": true,
+      "detected_issue_types": [
+        "negative_values (age)"
+      ],
+      "result": {
+        "tool": "check_value_rules",
+        "issues_found": true,
+        "details": {
+          "negative_values": {
+            "age": {
+              "count": 15,
+              "example_values": [
+                -38,
+                -33,
+                -35,
+                -45,
+                -32
+              ]
+            }
+          },
+          "invalid_dates": {}
+        }
+      }
+    },
+    "check_placeholders": {
+      "issues_found": true,
+      "detected_issue_types": [
+        "text_in_numeric_column (capital_gain)"
+      ],
+      "result": {
+        "tool": "check_placeholders",
+        "issues_found": true,
+        "details": {
+          "columns": {
+            "workclass": {
+              "count": 320,
+              "examples": [
+                "?"
+              ]
+            },
+            "occupation": {
+              "count": 320,
+              "examples": [
+                "?"
+              ]
+            },
+            "capital_gain": {
+              "count": 20,
+              "examples": [
+                "unknown"
+              ]
+            },
+            "native_country": {
+              "count": 95,
+              "examples": [
+                "?"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "check_text_consistency": {
+      "issues_found": false,
+      "detected_issue_types": [],
+      "result": {
+        "tool": "check_text_consistency",
+        "issues_found": false,
+        "details": {
+          "columns": {}
+        }
+      }
+    },
+    "check_column_health": {
+      "issues_found": false,
+      "detected_issue_types": [],
+      "result": {
+        "tool": "check_column_health",
+        "issues_found": false,
+        "details": {
+          "columns": {},
+          "high_cardinality_threshold": "at least 20 non-null values and 90% unique"
+        }
+      }
+    }
+  },
+  "agent_runs": [
+    {
+      "run": 1,
+      "found_issue_types": [],
+      "missed_issue_types": [],
+      "recall_found": null,
+      "recall_total": 7,
+      "recall": null,
+      "precision_matches": null,
+      "precision_total": null,
+      "precision": null,
+      "total_issues": null,
+      "unmatched_issues": [],
+      "tools_used": [],
+      "agent_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+    },
+    {
+      "run": 2,
+      "found_issue_types": [],
+      "missed_issue_types": [],
+      "recall_found": null,
+      "recall_total": 7,
+      "recall": null,
+      "precision_matches": null,
+      "precision_total": null,
+      "precision": null,
+      "total_issues": null,
+      "unmatched_issues": [],
+      "tools_used": [],
+      "agent_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+    },
+    {
+      "run": 3,
+      "found_issue_types": [],
+      "missed_issue_types": [],
+      "recall_found": null,
+      "recall_total": 7,
+      "recall": null,
+      "precision_matches": null,
+      "precision_total": null,
+      "precision": null,
+      "total_issues": null,
+      "unmatched_issues": [],
+      "tools_used": [],
+      "agent_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+    },
+    {
+      "run": 4,
+      "found_issue_types": [],
+      "missed_issue_types": [],
+      "recall_found": null,
+      "recall_total": 7,
+      "recall": null,
+      "precision_matches": null,
+      "precision_total": null,
+      "precision": null,
+      "total_issues": null,
+      "unmatched_issues": [],
+      "tools_used": [],
+      "agent_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+    },
+    {
+      "run": 5,
+      "found_issue_types": [],
+      "missed_issue_types": [],
+      "recall_found": null,
+      "recall_total": 7,
+      "recall": null,
+      "precision_matches": null,
+      "precision_total": null,
+      "precision": null,
+      "total_issues": null,
+      "unmatched_issues": [],
+      "tools_used": [],
+      "agent_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+    }
+  ],
+  "clean_data_false_positive_check": {
+    "issue_count": null,
+    "issues": [],
+    "agent_error": "[WinError 10053] An established connection was aborted by the software in your host machine"
+  },
+  "summary": {
+    "average_recall_found": null,
+    "injected_issue_types": 7,
+    "successful_agent_runs": 0,
+    "attempted_agent_runs": 5,
+    "average_recall": null,
+    "average_precision_percent": null,
+    "false_alarms_on_clean_data": null
+  }
+}
